@@ -103,7 +103,9 @@
 
 /* mainVisual */
 
-.mainVisual {}
+.mainVisual {
+    position: relative;
+}
 
 .mainVisual .main_slide {}
 
@@ -193,4 +195,172 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* mainslide item */
+
+.mainVisual .main_slide_arrows button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+.mainVisual .main_slide_arrows button:first-child {
+    margin: 0 0 0 -700px;
+}
+
+.mainVisual .main_slide_arrows button:last-child {
+    margin: 0 0 0 700px;
+}
+
+.mainVisual .main_slide_dots {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    display: flex;
+    gap: 20px;
+}
+
+
+.mainVisual .main_slide_dots li button {
+    background: #ff6347;
+    color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+
+    font-size: 13px;
+}
+
+.mainVisual .main_slide_dots li.on button {
+    background: #333;
+}
+
+.mainVisual .main_slide_num {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+
+    margin: 0 0 0 600px;
+    transform: translate(-100%, 0);
+
+    color: #fff;
+    font-size: 50px;
+}
+
+.mainVisual .main_slide_play {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+
+    margin: 0 0 0 600px;
+    transform: translate(-100%, 0);
+    z-index: 1;
+}
+
+.mainVisual .main_slide_play button {
+    color: #fff;
+    background: #ff6347;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.mainVisual .main_slide_pic {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    margin: 0 0 0 300px;
+
+
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 0 #000;
+    font-size: 0;
+    background: url(../img/lesedilarona01.jpg) no-repeat center center/cover;
+    transition: 0.5s;
+}
+
+.mainEvent figure {
+    text-align: center;
+    border-radius: 50px 50px 0 0;
+    overflow: hidden;
+}
+
+.mainEvent figure .scale_box {
+    margin: 0 0 20px 0;
+    overflow: hidden;
+}
+
+.mainEvent figure .scale_box img {
+    transition: 0.5s;
+}
+
+.mainEvent figure .scale_box:hover img {
+    transform: scale(1.5);
+}
+
+.mainEvent figure .p_dec {
+    margin: 0 0 20px 0;
+}
+
+.mainBanner {
+    background: url(../img/mainvisual03.jpg) no-repeat fixed center center/cover;
+    text-align: center;
+    color: #fff;
+    filter: grayscale(1);
+
+    margin: 0 50px;
+    border-radius: 50px;
+}
+
+.mainBanner i {
+    padding: 10px;
+    background: #000;
+    border-radius: 50%;
+    margin: 0 0 0 10px;
+    vertical-align: -2px;
+}
+
+.mainPromotion .tit {
+    width: auto;
+    text-align: left;
+}
+
+.mainPromotion .movie {
+    position: relative;
+}
+
+.mainPromotion .movie .label {
+    position: absolute;
+    top: 40px;
+    right: -30px;
+}
+
+.mainPromotion video {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.mainPromotion .promotion_dec {
+    display: flex;
+    align-items: center;
+
+    padding: 0 0 0 30px;
+    /* display: grid;
+    place-items: center; */
+}
+
+.mainPromotion .promotion_dec button {
+    background: #ff6347;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
 }

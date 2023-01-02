@@ -6,49 +6,61 @@ $(function () {
     $('.top_banner i').on('click', top_bannerClose)
 
     $('.main_slide .itm01').addClass('on');
+
     // mainSlide
-    var mainSlideOption = {
+    $('.main_slide').on('init afterChange', function (e, s, c) {
+        // c = 0,1,2
+        var current = $('.main_slide .slick-current');
+        current.addClass('on').siblings().removeClass('on');
+        $('.mainVisual .main_slide_num span').text(c ? (c + 1) : 1);
+        $('.mainVisual .main_slide_num strong').text(s.slideCount);
+        $('.mainVisual .main_slide_dots li').removeClass('on')
+        $('.mainVisual .main_slide_dots li').eq(c ? c : 0).addClass('on')
+
+        $('.mainVisual .main_slide_pic').css({ background: 'url(../img/lesedilarona0' + (c ? (c + 1) : 1) + '.jpg) no-repeat center center/cover' })
+    });
+
+    $('.main_slide').slick({
         arrows: false,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 4000,
         pauseOnHover: false,
         pauseOnFocus: false,
-    }
+    })
+
+    $('.mainVisual .main_slide_arrows button:first-child').on('click', function () {
+        $('.main_slide').slick('slickPrev')
+    });
+    $('.mainVisual .main_slide_arrows button:last-child').on('click', function () {
+        $('.main_slide').slick('slickNext')
+    });
 
 
-    var mainSlide = $('.main_slide').slick({ ...mainSlideOption, autoplaySpeed: 4000 })
+    $('.mainVisual .main_slide_play button:first-child').on('click', function () {
+        $('.main_slide').slick('slickPlay')
+    });
+    $('.mainVisual .main_slide_play button:last-child').on('click', function () {
+        $('.main_slide').slick('slickPause')
+    });
 
-    function mainSlideEvent(e, s, c) {
-        const current = $('.main_slide .slick-current')
-        //console.log(e, s, c)
-        current.addClass('on').siblings().removeClass('on')
-        $('.mainVisual .main_slide_num span').text(c + 1);
-        $('.mainVisual .main_slide_num strong').text(s.slideCount);
-    }
+    $('.mainVisual .main_slide_dots button').on('click', function () {
+        var idx = $(this).parent().index();
+        $('.main_slide').slick('slickGoTo', idx);
+    });
 
-    mainSlide.on('afterChange', mainSlideEvent);
+    $('.mainVisual .main_slide_dots li').on('click', function () {
+        // var idx = $(this).index(); // 0, 1 ,2
+        // eq(0) = nth-child(1)
+        $('.mainVisual .main_slide_dots li').removeClass('on')
+        $(this).addClass('on')
+    })
 
-    const slideLeftArrow = $('.mainVisual .left_arrow');
-    const slideRightArrow = $('.mainVisual .right_arrow');
-
-    slideLeftArrow.on('click', () => { mainSlide.slick('slickPrev') })
-    slideRightArrow.on('click', () => { mainSlide.slick('slickNext') })
-
-    const slideDots = $('.mainVisual .main_slide_dots li button');
-
-    function slideDotsLink() {
-        const idx = $(this).parent().index();
-        mainSlide.slick('slickGoTo', idx)
-    }
-
-    slideDots.on('click', slideDotsLink);
-
-
-
-
-
-
-
+    $('.mainPromotion .promotion_play button:first-child').on('click', function () {
+        $('.mainPromotion video').trigger('play')
+    });
+    $('.mainPromotion .promotion_play button:last-child').on('click', function () {
+        $('.mainPromotion video').trigger('pause')
+    });
 
 
 })
