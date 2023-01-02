@@ -17,7 +17,7 @@ $(function () {
         $('.mainVisual .main_slide_dots li').removeClass('on')
         $('.mainVisual .main_slide_dots li').eq(c ? c : 0).addClass('on')
 
-        $('.mainVisual .main_slide_pic').css({ background: 'url(../img/lesedilarona0' + (c ? (c + 1) : 1) + '.jpg) no-repeat center center/cover' })
+        $('.mainVisual .main_slide_pic').css({ background: 'url(.../img/lesedilarona0' + (c ? (c + 1) : 1) + '.jpg) no-repeat center center/cover' })
     });
 
     $('.main_slide').slick({
