@@ -311,6 +311,7 @@
     margin: 0 0 20px 0;
 }
 
+
 .mainBanner {
     background: url(../img/mainvisual03.jpg) no-repeat fixed center center/cover;
     text-align: center;
@@ -363,4 +364,115 @@
     color: #fff;
     padding: 10px;
     border-radius: 5px;
+}
+
+.mainYoutube .left {
+    display: flex;
+    align-items: center;
+}
+
+.mainYoutube .tit {
+    width: auto;
+    text-align: left;
+}
+
+.mainYoutubeBg {
+    color: #fff;
+
+    margin: 0 50px;
+    border-radius: 30px;
+    overflow: hidden;
+    transform: rotate(5deg);
+}
+
+.mainYoutubeBg .tit {
+    transform: rotate(-5deg);
+}
+
+.mainYoutubeBg i {
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+.mainProduct .product_slide {
+    margin: 0 -15px;
+}
+
+.mainProduct figure {
+    position: relative;
+    margin: 0 15px;
+}
+
+.mainProduct figure .case {
+    overflow: hidden;
+    margin: 0 0 10px 0;
+}
+
+.mainProduct figure .order_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+}
+
+.mainProduct figure:hover .order_btn {
+    display: block;
+}
+
+.mainProduct .product_slide_controller {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.mainProduct .product_slide_controller ul {
+    display: flex;
+    gap: 2px;
+}
+
+.mainProduct .product_slide_controller ul button {
+    padding: 3px;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.mainCustomer .main_tab_menu {
+    display: flex;
+    gap: 1px;
+}
+
+.mainCustomer .main_tab_menu>li {
+    flex: 1;
+}
+
+
+.mainCustomer .main_tab_menu>li button {
+    display: block;
+    width: 100%;
+    background: #ff6347;
+    color: #fff;
+    line-height: 40px;
+    padding: 0 0 0 15px;
+}
+
+.mainCustomer .main_tab_menu>li.on button {
+    background: #333247;
+}
+
+.mainCustomer .main_tab_content>li {
+    display: none;
+}
+
+.mainCustomer .main_tab_content>li.on {
+    display: block;
 }
