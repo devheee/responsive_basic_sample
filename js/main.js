@@ -82,8 +82,16 @@ $(function () {
 
 
     $('.product_slide').slick({
-        arrows: false,
         slidesToShow: 5,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
     });
 
 
@@ -109,6 +117,36 @@ $(function () {
         $('.mainCustomer .main_tab_menu>li').removeClass('on');
         $(this).parent().addClass('on');
     })
+
+
+    $('#f_link select').on('change', function () {
+        var lnk = $(this).val();
+        lnk && window.open(lnk);
+
+        // value 값이 있으면 새창 띄워라
+        // if (lnk) {
+        //     window.open(lnk);
+        // }
+
+    })
+
+
+    $('.m_open').on('click', function () {
+        $('.header').toggleClass('on')
+        $('.m_btn').toggleClass('on')
+    })
+
+    $('.header').on('scroll wheel', function () {
+        if ($(this).hasClass('on')) {
+            return false;
+        }
+
+    })
+
+
+
+
+
 
 
 })
