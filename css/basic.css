@@ -245,3 +245,23 @@ button {
     font-size: 30px;
     padding: 10px;
 }
+
+@media (max-width:768px) {
+    .to_top {
+        position: fixed;
+        bottom: 30px;
+        right: 20px;
+    }
+
+    .to_top button {
+        border: none;
+        outline: none;
+    }
+
+    .to_top i {
+        background: #ff6347;
+        color: #fff;
+        font-size: 30px;
+        padding: 10px;
+    }
+}
