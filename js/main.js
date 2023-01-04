@@ -143,9 +143,36 @@ $(function () {
 
     })
 
+    // to top button
+
+    $(window).on('scroll', function () {
+        //스크롤양 구함
+        var sct = $(window).scrollTop();
+        console.log(sct)
+        if (sct > 1000) {
+            $('.to_top').addClass('on');
+        } else {
+            $('.to_top').removeClass('on');
+        }
+
+        //fadeIn() , fadeOut(), ...제이쿼리 애니메이션이라서 javascript, react, vue 에서 사용불가
+        // if (sct > 1000) {
+        //     $('.to_top').fadeIn();
+        // } else {
+        //     $('.to_top').fadeOut();
+        // }
+
+    })
+
+    $('.to_top').on('click', function () {
+        $('html, body').stop().animate({ scrollTop: 0 }, 600)
+    })
 
 
-
+    $('.header .search_toggle button').on('click', function () {
+        // $('.header .search').slideToggle();
+        $('.header .search').toggleClass('on');
+    })
 
 
 

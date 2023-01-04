@@ -109,6 +109,10 @@ body {
     background: #666;
 }
 
+.header .m_open {
+    display: none;
+}
+
 @media (max-width:768px) {
     .header h1 {
         position: relative;
@@ -175,7 +179,7 @@ body {
 
     .header .inner .m_open {
         position: fixed;
-        top: 45px;
+        top: 35px;
         right: 30px;
         z-index: 9999;
 
@@ -212,10 +216,76 @@ body {
     line-height: 1;
 }
 
-.header .m_open {
+.header .search_toggle {
     display: none;
 }
 
+@media (max-width:768px) {
+    .header .search {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        margin: 0 -15px;
+
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .header .search.on {
+        height: 100px;
+    }
+
+    .header .search_toggle {
+        position: absolute;
+        top: 35px;
+        right: 70px;
+        z-index: 9999;
+
+        line-height: 1;
+
+        display: block;
+    }
+
+    .header .search_toggle button {
+        background: #f2f2f2;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .header .search input {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        color: #fff;
+        padding: 5px 0;
+        width: 60%;
+        background: transparent;
+        transition: 0.5s;
+    }
+
+    .header .search input::placeholder {
+        color: #ddd;
+    }
+
+    .header .search input:focus {
+        width: 60%;
+    }
+
+    .header .search input:focus::placeholder {
+        color: transparent;
+    }
+
+    .header .search button {
+        background: transparent;
+        border: none;
+        font-size: 30px;
+        color: #fff;
+        line-height: 1;
+    }
+}
 
 /* mainVisual */
 
@@ -765,4 +835,15 @@ body {
 
 #f_link option {
     background: #333;
+}
+
+.to_top {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+.to_top.on {
+    visibility: visible;
+    opacity: 1;
 }
